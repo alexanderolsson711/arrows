@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4954843693532322893
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 767497075049593606, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Name
+      value: ForestCastleDoorR
+      objectReference: {fileID: 0}
+    - target: {fileID: 767594274192881178, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Name
+      value: ForestFlag
+      objectReference: {fileID: 0}
+    - target: {fileID: 788589407936388304, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 788661780068020732, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 788690768361341070, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 789206616134702010, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 789855345268330376, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 789979721151548978, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 812077277444719904, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 812136452003133836, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 813531480802333098, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 813733227161025400, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 813790144213741152, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 813816200476674596, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 813887451179366426, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 2859416977392059504, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_Name
+      value: ForestCastleBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569638902840805224, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebc8f01bd53f14d4d8b2d553453299b0, type: 3}
