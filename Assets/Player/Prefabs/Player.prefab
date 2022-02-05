@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 4641947696940399250}
   - component: {fileID: 1163532489075854366}
   - component: {fileID: 3209920356217835630}
+  - component: {fileID: 1337342332320087397}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -480,6 +481,7 @@ MonoBehaviour:
   SprintSpeed: 5.335
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
+  LookSensitivity: 1
   JumpHeight: 1.2
   Gravity: -15
   JumpTimeout: 0.3
@@ -528,6 +530,7 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  aim: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -629,6 +632,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1337342332320087397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209920356217835618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c431f0aa2a42942b3af0f5471d6e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSensitivity: 1
+  aimSensitivity: 0.5
+  aimVirtualCamera: {fileID: 0}
+  aimColliderMask:
+    serializedVersion: 2
+    m_Bits: 1
+  debugTransform: {fileID: 0}
 --- !u!1 &3427262271035713901
 GameObject:
   m_ObjectHideFlags: 0
