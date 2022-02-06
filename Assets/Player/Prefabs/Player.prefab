@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &323819530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323819531}
+  m_Layer: 8
+  m_Name: ProjectileSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323819531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323819530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2864356579364866776}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &722330769598436437
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +435,7 @@ GameObject:
   - component: {fileID: 1163532489075854366}
   - component: {fileID: 3209920356217835630}
   - component: {fileID: 1337342332320087397}
+  - component: {fileID: 8639259153757271514}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -425,6 +456,7 @@ Transform:
   m_Children:
   - {fileID: 7097099872144009534}
   - {fileID: 4476372310405742762}
+  - {fileID: 323819531}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -531,6 +563,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   aim: 0
+  shoot: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -650,7 +683,25 @@ MonoBehaviour:
   aimColliderMask:
     serializedVersion: 2
     m_Bits: 1
-  debugTransform: {fileID: 0}
+  spawnProjectilePosition: {fileID: 323819531}
+  projectilePrefab: {fileID: 7880992280775290998, guid: d1d6e78fcb24f8f45850f6e957b54107, type: 3}
+--- !u!114 &8639259153757271514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209920356217835618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4e6e10bfbda6f40a2a038b4a411c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  shootCooldown: 0.5
+  shootDelay: 0.25
+  spawnProjectilePosition: {fileID: 323819531}
+  projectilePrefab: {fileID: 7880992280775290998, guid: d1d6e78fcb24f8f45850f6e957b54107, type: 3}
 --- !u!1 &3427262271035713901
 GameObject:
   m_ObjectHideFlags: 0

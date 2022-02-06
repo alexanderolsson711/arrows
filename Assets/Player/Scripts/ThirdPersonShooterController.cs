@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using StarterAssets;
+using Arrows.Utils;
+using Arrows.Combat.Weapons;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
@@ -17,63 +19,86 @@ public class ThirdPersonShooterController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
 
-    [Header("Raycasts")]
-    [SerializeField] private LayerMask aimColliderMask;
-    [SerializeField] private Transform debugTransform;
-
+    private IWeapon weapon;
     private ThirdPersonController thirdPersonController;
     private StarterAssetsInputs starterAssetsInputs;
     private Animator animator;
+    private MouseHandler mouseHandler;
+
+    private bool isAiming;
 
     private void Awake()
     {
+        weapon = GetComponent<IWeapon>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        mouseHandler = MouseHandler.Instance;
+    }
+
     private void Update()
     {
-        Vector3 mouseWorldPosition = Vector3.zero;
-
-        Vector2 screenCeneterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
-        Ray ray = Camera.main.ScreenPointToRay(screenCeneterPoint);
-        Transform hitTransform = null;
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderMask))
+        if (isAiming)
         {
-            debugTransform.position = raycastHit.point;
-            mouseWorldPosition = raycastHit.point;
-            hitTransform = raycastHit.transform;
-        }
-
-        if (starterAssetsInputs.aim)
-        {
-            aimVirtualCamera.gameObject.SetActive(true);
-            thirdPersonController.SetSensitivity(aimSensitivity);
-            thirdPersonController.SetRotateOnMove(false);
-            animator.SetLayerWeight(AIM_LAYER, Mathf.Lerp(animator.GetLayerWeight(AIM_LAYER), 1, Time.deltaTime * AIM_SPEED));
-
-            Vector3 worldAimTarget = mouseWorldPosition;
-            worldAimTarget.y = transform.position.y;
-            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
-
-            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * TURN_SPEED);
+            if (!starterAssetsInputs.aim)
+            {
+                StopAiming();
+            }
+            else
+            {
+                TurnTowardsAim();
+                if (starterAssetsInputs.shoot)
+                {
+                    weapon.Attack((mouseHandler.MouseWorldPosition - transform.position).normalized);
+                }
+            }        
         }
         else
         {
-            aimVirtualCamera.gameObject.SetActive(false);
-            thirdPersonController.SetSensitivity(normalSensitivity);
-            thirdPersonController.SetRotateOnMove(true);
-            animator.SetLayerWeight(AIM_LAYER, Mathf.Lerp(animator.GetLayerWeight(AIM_LAYER), 0, Time.deltaTime * AIM_SPEED));
+            if (starterAssetsInputs.aim)
+            {
+                // Remove saved shoot value
+                starterAssetsInputs.shoot = false;
+                StartAiming();
+            }
         }
 
-        if (starterAssetsInputs.shoot)
-        {
-            if (hitTransform != null)
-            {
-                Debug.Log("PACNG");
-            }
-            starterAssetsInputs.shoot = false;
-        }
+        SetAimLayerWeight(isAiming ? 1 : 0);
+    }
+
+    private void StartAiming()
+    {
+        isAiming = true;
+        aimVirtualCamera.gameObject.SetActive(true);
+        thirdPersonController.SetSensitivity(aimSensitivity);
+        thirdPersonController.SetRotateOnMove(false);
+    }
+
+    private void StopAiming()
+    {
+        isAiming = false;
+        aimVirtualCamera.gameObject.SetActive(false);
+        thirdPersonController.SetSensitivity(normalSensitivity);
+        thirdPersonController.SetRotateOnMove(true);
+    }
+
+    private void TurnTowardsAim()
+    {
+        Vector3 worldAimTarget = mouseHandler.MouseWorldPosition;
+        worldAimTarget.y = transform.position.y;
+        Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+
+        transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * TURN_SPEED);
+    }
+
+    private void SetAimLayerWeight(float goalWeight)
+    {
+        float aimLayerWeight = animator.GetLayerWeight(AIM_LAYER);
+        aimLayerWeight = Mathf.Lerp(aimLayerWeight, goalWeight, Time.deltaTime * AIM_SPEED);
+        animator.SetLayerWeight(AIM_LAYER, aimLayerWeight);
     }
 }
